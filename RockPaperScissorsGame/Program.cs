@@ -11,6 +11,8 @@
             // Strings to store the player's and computer's choices
             String player;
             String computer;
+            // String to store players reponse to playing again
+            String answer;
 
             // Main game loop
             while (playAgain)
@@ -95,9 +97,21 @@
                 // Ask if the player wants to play again
                 // If yes, the outer loop continues; if no, the loop exits
                 Console.WriteLine("Do you want to play again? (yes/no): ");
-                playAgain = Console.ReadLine().Trim().ToUpper() == "YES";
-            }
+                answer = Console.ReadLine();
+                answer = answer.ToUpper();
 
+                if (answer == "YES")
+                {
+                    playAgain = true;
+                }
+                else
+                {
+                    playAgain = false;
+                }
+
+            }
+            
+            Console.WriteLine("Thanks for playing the game!");
             // Wait for a key press before closing the console window
             Console.ReadKey();
         }
